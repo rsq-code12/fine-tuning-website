@@ -1,0 +1,45 @@
+/* ═════════════ Weightcraft · Steel Monochrome tokens (see DESIGN.md) ═════════════ */
+
+@theme inline {
+  --font-display: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: var(--font-garamond), Garamond, 'Times New Roman', serif;
+  /* body copy is the serif voice; Tailwind's default font-sans maps to it */
+  --font-sans: var(--font-garamond), Garamond, 'Times New Roman', serif;
+  --font-mono: var(--font-plex), ui-monospace, 'SF Mono', monospace;
+}
+
+@theme {
+  /* surfaces (ink = canvas black) */
+  --color-ink: #000000;
+  --color-ink-2: #0d0d0d;
+  --color-ink-3: #141414;
+  --color-ink-4: #1f1f1f;
+
+  /* opaque text ladder: white → body → muted */
+  --color-bone: #ffffff;
+  --color-bone-2: #e6e6e6;
+  --color-bone-3: #cccccc;
+  --color-bone-4: #999999;
+  --color-bone-5: #666666;
+
+  --color-line: #262626;
+  --color-line-2: #3a3a3a;
+  --color-link: #c3d9f3;
+  /* accent alias used by components: white */
+  --color-signal: #ffffff;
+  /* EMBER: the single colour accent. Metallic red-orange, ~5% of the page, 8 named highlights (DESIGN.md) */
+  --color-ember: #ff4d24;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+:root {
+  /* brushed steel, colourless; reserved for monumental type */
+  --steel: linear-gradient(180deg, #ffffff 0%, #e2e2e2 38%, #9c9c9c 60%, #f2f2f2 76%, #b5b5b5 100%);
+  --steel-sheen: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / 0.95) 50%, transparent 62%);
+  /* heated metal: bright edge, deep red core, hot highlight band */
+  --ember: linear-gradient(118deg, #ffb59a 0%, #ff6a3d 26%, #c4250c 50%, #ff8a5c 70%, #d63a18 100%);
+  --ember-sheen: linear-gradient(105deg, transparent 38%, rgb(255 230 210 / 0.95) 50%, transparent 62%);
+  --section: 120px;
+}

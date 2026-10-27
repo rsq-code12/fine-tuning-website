@@ -1,0 +1,224 @@
+/* Primitives: the building blocks every section uses (DESIGN.md → Components). */
+
+@layer components {
+  /* Brushed steel for monumental type. Applied to word/char elements so it survives SplitText. */
+  .steel,
+  .display em:not(:has(.sw)),
+  .display em .sw,
+  .footer-word .sc,
+  .warp-word .sc,
+  .marquee__inner em {
+    background-image: var(--steel-sheen), var(--steel);
+    background-size: 280% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 170% 0, 0 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-style: normal;
+    animation: sheen 8s var(--ease-quart) infinite;
+  }
+
+  /* Ember: metallic red-orange, reserved for the few things that matter most */
+  .ember,
+  .hero-title em,
+  .cta-title em .sc,
+  .statement-text em .sw {
+    background-image: var(--ember-sheen), var(--ember);
+    background-size: 280% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 170% 0, 0 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: sheen 8s var(--ease-quart) infinite;
+  }
+  .hero-title em,
+  .cta-title em {
+    font-style: normal;
+  }
+
+  /* Caption / eyebrow: machined mono label after a hairline */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-bone-4);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--color-line-2);
+  }
+
+  /* Display: Saira Condensed, uppercase, weight 400, wide tracking */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    line-height: 0.98;
+    font-size: clamp(2.1rem, 5.6vw, 6rem);
+    color: var(--color-bone);
+    text-wrap: balance;
+  }
+  .display--md {
+    font-size: clamp(1.9rem, 4vw, 4.2rem);
+    line-height: 1.02;
+    letter-spacing: 0.045em;
+  }
+
+  /* Body voice: EB Garamond */
+  .lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 1.3vw, 1.32rem);
+    line-height: 1.55;
+    font-weight: 400;
+    color: var(--color-bone-2);
+    max-width: 34rem;
+    text-wrap: pretty;
+  }
+
+  /* Panel: surface-soft, hairline, square. No glass, no shadow. */
+  .panel {
+    background: var(--color-ink-2);
+    border: 1px solid var(--color-line);
+    border-radius: 0;
+  }
+
+  /* Tags are just type: muted mono separated by dots */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+  }
+  .tags li {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-bone-4);
+  }
+  .tags li + li::before {
+    content: '·';
+    margin-right: 12px;
+    color: var(--color-line-2);
+  }
+
+  /* Primary button: transparent pill, 1px white outline, mono label */
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 44px;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-bone);
+    background: transparent;
+    color: var(--color-bone);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+      background-color 0.4s var(--ease-expo),
+      border-color 0.4s;
+    will-change: transform;
+  }
+  .btn:hover {
+    background: rgb(255 255 255 / 0.08);
+  }
+  .btn svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.5s var(--ease-expo);
+  }
+  .btn:hover svg {
+    transform: translateX(4px);
+  }
+  .btn--sm {
+    min-height: 38px;
+    padding: 11px 22px;
+    font-size: 11px;
+  }
+  .btn--lg {
+    min-height: 54px;
+    padding: 18px 40px;
+    font-size: 13px;
+  }
+
+  .link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+    background: linear-gradient(var(--color-bone), var(--color-bone)) left bottom / 0% 1px no-repeat;
+    transition: background-size 0.6s var(--ease-expo);
+  }
+  .link:hover {
+    background-size: 100% 1px;
+  }
+
+  .pulse-dot {
+    position: relative;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-ember);
+  }
+  .pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--color-ember);
+    animation: ping 2s var(--ease-expo) infinite;
+  }
+}
+
+/* Words never break mid-word; headline sizes are guarded in JS (lib/fitText.ts) instead */
+@layer components {
+  .display,
+  .hero-title,
+  .cta-title,
+  .services-title,
+  .statement-text,
+  .svc-title,
+  .pstep__title {
+    overflow-wrap: normal;
+    word-break: keep-all;
+    hyphens: none;
+    max-width: 100%;
+  }
+  /* the decoding sentence may wrap anywhere while it is still gibberish */
+  .decode {
+    overflow-wrap: anywhere;
+  }
+}
+
+@utility px-gutter {
+  padding-inline: clamp(20px, 3.2vw, 44px);
+}
+
+@utility text-mono-xs {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

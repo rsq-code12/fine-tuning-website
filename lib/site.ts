@@ -1,0 +1,49 @@
+/*
+ * Single source of truth for brand, domain and contact details.
+ * Every SEO surface (metadata, JSON-LD, sitemap, llms.txt, feeds, emails) reads from here,
+ * and all content files write {{brand}} instead of the name, so a rebrand is one edit.
+ *
+ * NOTE: "Weightcraft", the domain and the email are placeholders until confirmed.
+ */
+
+const envUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : '');
+
+export const SITE = {
+  name: 'Weightcraft',
+  legalName: 'Weightcraft',
+  url: (envUrl || 'https://weightcraft.ai').replace(/\/$/, ''),
+  email: 'hello@weightcraft.ai',
+  tagline: 'The Godfathers of Applied AI',
+  /** One-sentence entity definition. Repeated verbatim across pages so search and answer engines learn it. */
+  definition:
+    'Weightcraft is an applied AI studio that trains and fine-tunes custom language models, builds niche training datasets, and ships production AI agent systems for businesses.',
+  description:
+    'Weightcraft trains, fine-tunes and unleashes custom AI models and agent systems for companies that refuse to be average. Often imitated. Never duplicated.',
+  /** Typical commitments already stated on the site. Keep in sync with the home page copy. */
+  promises: {
+    reply: 'A plan, a price and an honest verdict within 24 hours',
+    pilot: 'A focused pilot usually ships in two to six weeks',
+  },
+  /** Only list profiles that really exist: these feed schema.org sameAs. */
+  sameAs: [] as string[],
+  social: {
+    x: '',
+    linkedin: '',
+    github: '',
+    huggingface: '',
+  },
+  locale: 'en_US',
+  areaServed: 'Worldwide',
+} as const;
+
+/**
+ * Search visibility. Off by default so nothing gets indexed under the placeholder brand:
+ * robots.txt blocks every crawler and every response carries `X-Robots-Tag: noindex`.
+ * Set SITE_INDEXABLE=1 in Vercel (then redeploy) once the real brand and domain are in.
+ */
+export const INDEXABLE = process.env.SITE_INDEXABLE === '1';
+
+export const absoluteUrl = (path = '/') => `${SITE.url}${path.startsWith('/') ? path : `/${path}`}`;
+
+/** Replace {{brand}} / {{email}} tokens in content strings. */
+export const brand = (s: string) => s.replaceAll('{{brand}}', SITE.name).replaceAll('{{email}}', SITE.email);

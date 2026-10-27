@@ -1,0 +1,673 @@
+/* Story sections. Everything square, monochrome, hairline-divided (DESIGN.md). */
+
+@layer components {
+  /* ── Hero ── */
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    color: var(--color-bone);
+  }
+
+  /* ── Noise chapter ── */
+  .noise-word {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    font-family: var(--font-mono);
+    font-size: clamp(10px, 0.8vw, 12px);
+    letter-spacing: 0.06em;
+    color: #3a3a3a;
+    white-space: nowrap;
+    padding: 4px 8px;
+    border: 1px solid #161616;
+  }
+
+  /* ── Data filter rows ── */
+  .filter-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 12px 16px;
+    border-top: 1px solid var(--color-line);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-bone-3);
+    transition: color 0.4s;
+  }
+  .filter-row > span {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+  }
+  .filter-row > span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    background: var(--color-bone-5);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-expo);
+  }
+  .filter-row b {
+    flex: none;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.45s var(--ease-expo);
+  }
+  .filter-row.is-judged b {
+    opacity: 1;
+    transform: none;
+  }
+  .filter-row[data-verdict='drop'].is-judged {
+    color: var(--color-bone-5);
+  }
+  .filter-row[data-verdict='drop'].is-judged > span::after {
+    transform: scaleX(1);
+  }
+  .filter-row[data-verdict='drop'] b {
+    color: var(--color-bone-5);
+    border: 1px solid var(--color-line-2);
+  }
+  .filter-row[data-verdict='keep'] b {
+    color: var(--color-ink);
+    background: var(--color-bone);
+  }
+  .filter-row[data-verdict='keep'].is-judged {
+    color: var(--color-bone);
+  }
+
+  /* ── Training ── */
+  .decode {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    font-size: clamp(1.15rem, 1.65vw, 1.75rem);
+    line-height: 1.08;
+    min-height: 2.2em;
+  }
+  .decode .u {
+    color: var(--color-bone-5);
+    font-family: var(--font-mono);
+    font-size: 0.62em;
+  }
+  .loss {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .loss line {
+    stroke: var(--color-line);
+    stroke-dasharray: 2 6;
+  }
+  .loss__line {
+    fill: none;
+    stroke: var(--color-bone);
+    stroke-width: 1.5;
+  }
+  .loss__dot {
+    fill: var(--color-bone);
+  }
+
+  /* ── Fine-tune demo ── */
+  .demo-tab {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    color: var(--color-bone-4);
+    position: relative;
+    isolation: isolate; /* keeps the sliding highlight pill inside the tab */
+    transition: color 0.3s;
+  }
+  .demo-tab[aria-selected='true'] {
+    color: var(--color-ink);
+  }
+  .msg-who {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-bone-4);
+  }
+  .caret::after {
+    content: '';
+    display: inline-block;
+    width: 0.45em;
+    height: 1em;
+    margin-left: 3px;
+    vertical-align: -0.12em;
+    background: var(--color-bone);
+    animation: blink 0.8s steps(1) infinite;
+  }
+
+  /* ── Statement (serif, literary) ── */
+  .statement-text {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.8vw, 3.9rem);
+    line-height: 1.16;
+    color: var(--color-bone-3);
+    text-wrap: balance;
+  }
+  .statement-text em {
+    font-style: italic;
+  }
+
+  /* ── Versus ── */
+  .vs-item {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-top: 1px solid var(--color-line);
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  }
+  .vs-item::before {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    flex: none;
+    width: 1.2rem;
+  }
+  .vs-rent .vs-item {
+    color: var(--color-bone-4);
+  }
+  .vs-rent .vs-item::before {
+    content: '✕';
+    color: var(--color-bone-5);
+  }
+  .vs-own .vs-item {
+    color: var(--color-bone);
+  }
+  .vs-own .vs-item::before {
+    content: '+';
+    color: var(--color-bone);
+  }
+  .vs-rent .vs-item .strike {
+    position: absolute;
+    left: 2.2rem;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: var(--color-bone-5);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  /* ── Services: cinema-black showroom ── */
+  .services {
+    background: var(--color-ink);
+    color: var(--color-bone);
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--color-line);
+  }
+  .services::before {
+    content: 'WEIGHTCRAFT  ·  THE FAMILY BUSINESS  ·  ';
+    position: absolute;
+    top: 9%;
+    left: -8%;
+    width: 140%;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(6rem, 16vw, 16rem);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    white-space: nowrap;
+    color: #0b0b0b;
+    pointer-events: none;
+  }
+  .services-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+  }
+  .services-title em {
+    font-style: normal;
+    background-image: var(--steel-sheen), var(--steel);
+    background-size: 280% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 170% 0, 0 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: sheen 8s var(--ease-quart) infinite;
+  }
+  .svc-card {
+    position: relative;
+    flex: none;
+    width: clamp(300px, 27vw, 410px);
+    height: min(calc(100svh - 190px), 740px);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--color-ink-2);
+    border: 1px solid var(--color-line);
+    border-radius: 0;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: border-color 0.4s;
+  }
+  .svc-card:hover {
+    border-color: var(--color-line-2);
+  }
+  .svc-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .svc-link:focus-visible {
+    outline: none;
+  }
+  .svc-card:has(.svc-link:focus-visible) {
+    outline: 1px solid var(--color-bone);
+    outline-offset: 4px;
+  }
+  .svc-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-bone-4);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .svc-art {
+    flex: 1 1 auto;
+    min-height: 110px;
+    margin-top: 16px;
+    border: 1px solid var(--color-line);
+    background-color: #050505;
+    background-image:
+      linear-gradient(#111 1px, transparent 1px),
+      linear-gradient(90deg, #111 1px, transparent 1px);
+    background-size: 18px 18px;
+    padding: 12px;
+    overflow: hidden;
+  }
+  .svc-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 3.6vw, 3.8rem);
+    line-height: 0.9;
+    letter-spacing: 0.005em;
+    margin-top: 18px;
+    width: fit-content;
+    background-image: var(--steel);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .svc-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    line-height: 1.12;
+    letter-spacing: 0.005em;
+    margin-top: 8px;
+    text-wrap: balance;
+  }
+  .svc-desc {
+    font-family: var(--font-serif);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin-top: 10px;
+    color: var(--color-bone-3);
+  }
+  .svc-pitch {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    padding: 12px 0;
+    margin-top: 14px;
+    color: var(--color-bone);
+    border-top: 1px solid var(--color-line);
+    border-bottom: 1px solid var(--color-line);
+  }
+  .svc-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 14px;
+  }
+  .svc-tools li {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-bone-4);
+  }
+  .svc-tools li + li::before {
+    content: '·';
+    margin-right: 12px;
+    color: var(--color-line-2);
+  }
+
+  /* ── Process: spec panel ── */
+  .process-bg {
+    background-image:
+      linear-gradient(#0c0c0c 1px, transparent 1px),
+      linear-gradient(90deg, #0c0c0c 1px, transparent 1px);
+    background-size: 80px 80px;
+    -webkit-mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 100%);
+    mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 100%);
+  }
+  .scanner {
+    position: relative;
+    padding: 24px;
+    background: var(--color-ink-2);
+    border: 1px solid var(--color-line);
+  }
+  .scanner__num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(5.5rem, 9vw, 8.5rem);
+    line-height: 0.82;
+    letter-spacing: 0.02em;
+    display: flex;
+  }
+  .digit-roll {
+    display: inline-block;
+    height: 0.86em;
+    overflow: hidden;
+    vertical-align: top;
+  }
+  .digit-roll > span {
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s var(--ease-expo);
+  }
+  .digit-roll > span > span {
+    height: 0.86em;
+    line-height: 0.86;
+  }
+  .scanner__screen {
+    position: relative;
+    border: 1px solid var(--color-line);
+    background-color: #050505;
+    background-image:
+      linear-gradient(#101010 1px, transparent 1px),
+      linear-gradient(90deg, #101010 1px, transparent 1px);
+    background-size: 22px 22px;
+    overflow: hidden;
+  }
+  .scanner__screen::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    top: 0;
+    background: rgb(255 255 255 / 0.5);
+    box-shadow: 0 0 18px 2px rgb(255 255 255 / 0.18);
+    animation: scan 3.6s var(--ease-quart) infinite;
+    pointer-events: none;
+  }
+  .scanner__tile {
+    padding: 14px 0 0;
+    border-top: 1px solid var(--color-line);
+  }
+  .ring-track {
+    fill: none;
+    stroke: var(--color-line);
+  }
+  .ring-fill {
+    fill: none;
+    stroke: var(--color-bone);
+    stroke-linecap: butt;
+    transition: stroke-dashoffset 1s var(--ease-expo);
+  }
+  .pstep {
+    color: var(--color-bone-5);
+    transition: color 0.6s var(--ease-expo);
+  }
+  .pstep .pstep__body,
+  .pstep .pstep__chips li {
+    color: var(--color-bone-5);
+    transition: color 0.6s var(--ease-expo);
+  }
+  .pstep.is-active {
+    color: var(--color-bone);
+  }
+  .pstep.is-active .pstep__body {
+    color: var(--color-bone-3);
+  }
+  .pstep.is-active .pstep__chips li {
+    color: var(--color-bone-4);
+  }
+  .pstep__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+  }
+  .pstep__node {
+    position: absolute;
+    left: -5px;
+    top: 0.45em;
+    width: 9px;
+    height: 9px;
+    border: 1px solid var(--color-line-2);
+    background: var(--color-ink);
+    transition: all 0.5s var(--ease-expo);
+  }
+  .pstep.is-done .pstep__node {
+    border-color: var(--color-bone);
+    background: var(--color-bone);
+  }
+  .pstep.is-active .pstep__node {
+    border-color: var(--color-ember);
+    background: var(--color-ember);
+    box-shadow: 0 0 14px rgb(255 77 36 / 0.55);
+  }
+  .pviz {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(0.95);
+    transition:
+      opacity 0.7s var(--ease-expo),
+      transform 0.9s var(--ease-expo);
+  }
+  .pviz.is-on {
+    opacity: 1;
+    transform: none;
+  }
+  .pviz svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #8a8a8a;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .pviz .acc { stroke: #fff; }
+  .pviz .accf { fill: #fff; stroke: none; }
+  .pviz .crim { stroke: #fff; }
+  .pviz .faint { stroke: #262626; }
+  .pviz .d {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1.6s var(--ease-expo) var(--dl, 0.1s);
+  }
+  .pviz.is-on .d { stroke-dashoffset: 0; }
+  .pviz .sweep {
+    transform-origin: 100px 100px;
+    animation: spin 3.2s linear infinite;
+  }
+  .pviz .blip {
+    animation: blip 2.4s ease-in-out infinite;
+    animation-delay: var(--dl, 0s);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .pviz .cell { fill: #0d0d0d; stroke: #333; }
+  .pviz .cell-on {
+    animation: cellOnSteel 2.4s ease-in-out infinite;
+    animation-delay: var(--dl, 0s);
+  }
+  .pviz .grow {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    transform: scaleY(0.05);
+    transition: transform 1.2s var(--ease-expo) var(--dl, 0s);
+  }
+  .pviz.is-on .grow { transform: scaleY(1); }
+  .pviz .orbit {
+    offset-path: path('M100 100 C 140 40, 190 60, 170 100 C 150 140, 120 150, 100 100 C 80 50, 50 60, 30 100 C 10 140, 60 160, 100 100');
+    animation: orbit 4s linear infinite;
+  }
+
+  /* ── Marquee ── */
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid var(--color-line);
+    padding: clamp(14px, 1.6vw, 24px) 0;
+  }
+  .marquee__inner {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: clamp(1.4rem, 3vw, 3rem);
+    padding-right: clamp(1.4rem, 3vw, 3rem);
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: clamp(2.6rem, 6.4vw, 6.6rem);
+    line-height: 1;
+    letter-spacing: 0.005em;
+    color: var(--color-bone);
+    will-change: transform;
+  }
+  .marquee__inner i {
+    font-style: normal;
+    font-size: 0.3em;
+    color: var(--color-line-2);
+  }
+
+  /* ── Footer wordmark ── */
+  .footer-word {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: clamp(3.4rem, 14vw, 16rem);
+    line-height: 0.86;
+    letter-spacing: 0.08em;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ── One-word moments ── */
+  .warp-word {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.8;
+    letter-spacing: 0.005em;
+    white-space: nowrap;
+    font-size: clamp(8rem, 38vw, 44rem);
+    will-change: transform;
+  }
+  .warp-cap {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-bone-4);
+  }
+}
+
+@media (max-width: 640px) {
+  /* filter rows: let the sample text wrap to two lines instead of truncating */
+  .filter-row {
+    align-items: flex-start;
+  }
+  .filter-row > span {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 899px) {
+  .svc-card {
+    width: 100%;
+    height: auto;
+  }
+  .svc-art {
+    flex: none;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Network layer labels (training chapter): sit just under each layer */
+@layer components {
+  .net-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  .net-label::before {
+    content: '';
+    width: 1px;
+    height: 12px;
+    background: var(--color-line-2);
+    margin-bottom: 4px;
+  }
+  .net-label b {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-bone);
+    padding: 5px 12px;
+    border: 1px solid var(--color-line-2);
+    border-radius: 9999px;
+    background: var(--color-ink);
+  }
+  .net-label span {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--color-bone-4);
+  }
+}

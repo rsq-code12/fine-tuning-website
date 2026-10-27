@@ -1,0 +1,11 @@
+/* Weightcraft design system entry. The rules live in /styles; the spec lives in DESIGN.md. */
+@import 'tailwindcss';
+
+@import '../styles/tokens.css';
+@import '../styles/base.css';
+@import '../styles/primitives.css';
+@import '../styles/experience.css';
+@import '../styles/sections.css';
+@import '../styles/illustrations.css';
+@import '../styles/motion.css';
+@import '../styles/content.css';

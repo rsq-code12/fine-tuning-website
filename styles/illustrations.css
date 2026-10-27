@@ -1,0 +1,94 @@
+/* Service-card line illustrations: grey hairline drawings, white for the one thing that matters. */
+
+@layer components {
+  .ill {
+    width: 100%;
+    height: 100%;
+    color: #8c8c8c;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    overflow: visible;
+  }
+  .ill .t {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    fill: currentColor;
+    stroke: none;
+  }
+  .ill .tb { fill: #fff; }
+  .ill .acc { stroke: #fff; }
+  .ill .acc-t { fill: #fff; }
+  .ill .accf { fill: #fff; }
+  .ill .paperf { fill: #0d0d0d; }
+  .ill .paperf-a { fill: rgb(13 13 13 / 0.7); }
+  .ill .inkf { fill: currentColor; }
+  .ill .paper-t { fill: #0d0d0d; }
+  .ill .faint { opacity: 0.35; }
+  .ill .faint-s { opacity: 0.45; }
+  .ill .dash { stroke-dasharray: 3 6; }
+  .ill .flow {
+    stroke-dasharray: 2 7;
+    animation: flow 1.2s linear infinite;
+  }
+  .ill .d {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1.6s var(--ease-expo) var(--d, 0s);
+  }
+  .is-in .ill .d { stroke-dashoffset: 0; }
+  .ill .spin { animation: spin 9s linear infinite; }
+  .ill .spin-rev { animation: spin 9s linear infinite reverse; }
+  .ill .spin-slow { animation: spin 40s linear infinite; }
+  .ill .knob { animation: knob var(--t) ease-in-out infinite alternate; }
+  .ill .blink { animation: blink 1s steps(1) infinite; }
+  .ill .bar {
+    transform-box: fill-box;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.9s var(--ease-expo) calc(0.3s + var(--i) * 0.08s);
+  }
+  .is-in .ill .bar { transform: scaleX(1); }
+  .ill .flip {
+    transform-origin: 200px 160px;
+    animation: flip 3.4s var(--ease-quart) infinite alternate;
+  }
+  .ill .tl {
+    opacity: 0;
+    transition: opacity 0.25s calc(0.4s + var(--i) * 0.35s);
+  }
+  .is-in .ill .tl { opacity: 1; }
+  .ill .cell { stroke-width: 1; fill: transparent; }
+  .ill .cell.head { fill: #1f1f1f; }
+  .ill .cell-on {
+    animation: cellOnSteel 2.7s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.3s);
+  }
+  .ill .lens { animation: lens 7s ease-in-out infinite; }
+  .ill .candle {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scaleY(0);
+    transition: transform 0.9s var(--ease-expo) calc(0.1s + var(--i) * 0.07s);
+  }
+  .is-in .ill .candle { transform: scaleY(1); }
+  .ill .pop {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.6s var(--ease-expo) 1.1s;
+  }
+  .is-in .ill .pop { opacity: 1; transform: none; }
+  .ill .post {
+    animation: post 4.5s linear infinite;
+    animation-delay: calc(var(--i) * -1.5s);
+  }
+  .ill .wave {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: wave 1.1s ease-in-out infinite alternate;
+    animation-delay: calc(var(--i) * -0.09s);
+  }
+}

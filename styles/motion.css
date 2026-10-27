@@ -1,0 +1,78 @@
+/* Keyframes shared across the system. */
+
+@keyframes sheen {
+  0%, 40% { background-position: 170% 0, 0 0; }
+  80%, 100% { background-position: -70% 0, 0 0; }
+}
+@keyframes ping {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+@keyframes grain {
+  0% { background-position: 0 0; }
+  20% { background-position: -37px 23px; }
+  40% { background-position: 29px -41px; }
+  60% { background-position: -19px -13px; }
+  80% { background-position: 43px 37px; }
+  100% { background-position: 0 0; }
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@keyframes flow { to { stroke-dashoffset: -18; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes knob {
+  from { transform: translateY(var(--a)); }
+  to { transform: translateY(var(--b)); }
+}
+@keyframes flip {
+  0%, 20% { transform: scaleX(1); }
+  80%, 100% { transform: scaleX(-1); }
+}
+@keyframes cellOnSteel {
+  0%, 100% { fill: #141414; }
+  50% { fill: #ffffff; }
+}
+@keyframes lens {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-130px, -40px); }
+  66% { transform: translate(-60px, 34px); }
+}
+@keyframes post {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(200px); opacity: 0; }
+}
+@keyframes wave {
+  from { transform: scaleY(0.25); }
+  to { transform: scaleY(1); }
+}
+@keyframes blip {
+  0%, 100% { opacity: 0.2; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes orbit {
+  to { offset-distance: 100%; }
+}
+@keyframes scrollcue {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none; }
+  .ill *,
+  .steel,
+  .display em .sw {
+    animation: none !important;
+  }
+}
