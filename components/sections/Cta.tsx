@@ -8,6 +8,7 @@ import Magnetic from '@/components/ui/Magnetic';
 import { Arrow } from '@/components/ui/Logo';
 import { SITE } from '@/lib/site';
 
+/** Alias of SITE.email. The address itself lives only in lib/site.ts. */
 export const CONTACT_EMAIL = SITE.email;
 
 const TOPICS = [

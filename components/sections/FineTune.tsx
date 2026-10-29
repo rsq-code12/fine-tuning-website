@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useInView } from 'motion/react';
 import SplitReveal from '@/components/ui/SplitReveal';
 import Reveal from '@/components/ui/Reveal';
 import { scenarios } from '@/data/demo';
+import { SITE } from '@/lib/site';
 
 type Mode = 'base' | 'tuned';
 const CHECKS = ['Knows your policies', 'Talks like your brand', 'Gets things done'];
@@ -81,7 +82,7 @@ function Demo() {
         <div className="relative max-w-[92%] border border-line bg-ink px-4 py-3">
           <span className="msg-who flex items-center gap-2">
             <i className={`inline-block h-1.5 w-1.5 rounded-full transition-colors ${mode === 'tuned' ? 'bg-signal' : 'bg-bone/40'}`} />
-            {mode === 'base' ? 'Somebody else’s AI' : `Weightcraft-trained · ${s.model}`}
+            {mode === 'base' ? 'Somebody else’s AI' : `${SITE.name}-trained · ${s.model}`}
           </span>
           <p className={`mt-1 min-h-[6.2em] text-[0.95rem] leading-relaxed ${done ? '' : 'caret'} ${mode === 'tuned' ? 'text-bone' : 'text-bone-3'}`}>{out}</p>
         </div>

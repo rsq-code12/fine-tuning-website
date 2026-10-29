@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Logo from '@/components/ui/Logo';
 import Magnetic from '@/components/ui/Magnetic';
+import { SITE } from '@/lib/site';
 
 const LINKS = [
   ['#story', 'Story'],
@@ -36,9 +37,9 @@ export default function Nav() {
           </a>
         ))}
       </nav>
-      <a href="#top" className="col-start-1 flex items-center gap-3 justify-self-start lg:col-start-2 lg:justify-self-center" aria-label="Weightcraft home">
+      <a href="#top" className="col-start-1 flex items-center gap-3 justify-self-start lg:col-start-2 lg:justify-self-center" aria-label={`${SITE.name} home`}>
         <Logo className="h-6 w-6" />
-        <span className="nav__wordmark">Weightcraft</span>
+        <span className="nav__wordmark">{SITE.name}</span>
       </a>
       <div className="col-start-3 justify-self-end">
         <Magnetic href="#contact" className="btn btn--sm">

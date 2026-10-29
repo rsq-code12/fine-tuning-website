@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import { OWN, RENT } from '@/data/home';
+import { SITE } from '@/lib/site';
 
 
 export default function Versus() {
@@ -51,7 +52,7 @@ export default function Versus() {
         </div>
         <div className="vs-own">
           <p className="eyebrow">Owned AI</p>
-          <h3 className="steel mt-5 mb-6 font-display font-semibold uppercase tracking-[0.005em] text-[clamp(2rem,3.4vw,3.2rem)] leading-none">Made by Weightcraft</h3>
+          <h3 className="steel mt-5 mb-6 font-display font-semibold uppercase tracking-[0.005em] text-[clamp(2rem,3.4vw,3.2rem)] leading-none">Made by {SITE.name}</h3>
           <ul>
             {OWN.map((t) => (
               <li key={t} className="vs-item">

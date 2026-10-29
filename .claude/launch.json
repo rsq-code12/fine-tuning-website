@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "weightcraft-dev",
+      "name": "ramanujan-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
         "run",
@@ -11,7 +11,7 @@
       "port": 3000
     },
     {
-      "name": "weightcraft-prod",
+      "name": "ramanujan-prod",
       "runtimeExecutable": "npx",
       "runtimeArgs": [
         "next",
@@ -22,7 +22,7 @@
       "port": 3100
     },
     {
-      "name": "weightcraft-dev-attach",
+      "name": "ramanujan-dev-attach",
       "url": "http://localhost:3001",
       "port": 3001
     }

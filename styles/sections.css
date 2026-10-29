@@ -223,7 +223,7 @@
     border-top: 1px solid var(--color-line);
   }
   .services::before {
-    content: 'WEIGHTCRAFT  ·  THE FAMILY BUSINESS  ·  ';
+    content: 'RAMANUJAN  ·  THE FAMILY BUSINESS  ·  ';
     position: absolute;
     top: 9%;
     left: -8%;

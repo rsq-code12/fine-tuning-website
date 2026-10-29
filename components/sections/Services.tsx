@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { gsap, ScrollTrigger, useGSAP } from '@/lib/gsap';
 import { services } from '@/data/services';
 import { SERVICE_SLUGS } from '@/data/content/types';
+import { SITE } from '@/lib/site';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -122,7 +123,7 @@ export default function Services() {
     <section ref={root} id="services" data-chapter="6" data-canvas="0" className="services">
       <div ref={pin} className="relative flex flex-col justify-center overflow-hidden py-24 min-[900px]:h-svh min-[900px]:py-0">
         <div className="absolute inset-x-0 top-0 hidden justify-between border-b border-line px-gutter pt-[88px] pb-3 font-mono text-[10px] tracking-[0.2em] uppercase text-bone-4 min-[900px]:flex">
-          <span>@weightcraft</span>
+          <span>@{SITE.name.toLowerCase()}</span>
           <span>
             <b className="js-counter">01</b> / {services.length}
           </span>
@@ -146,7 +147,7 @@ export default function Services() {
           {services.map((s, i) => (
             <article key={s.title} className="svc-card" data-cursor-label="explore">
               <div className="svc-top">
-                <span>@weightcraft</span>
+                <span>@{SITE.name.toLowerCase()}</span>
                 <span>
                   {pad(i + 1)} / {services.length}
                 </span>

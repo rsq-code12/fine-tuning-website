@@ -1,6 +1,6 @@
 ---
 version: 1
-name: Weightcraft — Steel Monochrome
+name: Ramanujan — Steel Monochrome
 source: Adapted from the Bugatti DESIGN.md analysis on getdesign.md (https://getdesign.md/bugatti/design-md). Deviation by request: semi-bold Archivo display instead of a thin weight-400 face.
 description: >
   Austere, luxury-engineered monochrome. Near-pure black canvas, white uppercase

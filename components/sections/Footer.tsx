@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { gsap, ScrollTrigger, SplitText, useGSAP } from '@/lib/gsap';
 import { fitText } from '@/lib/fitText';
+import { SITE } from '@/lib/site';
 
 const COLS: [string, [string, string][]][] = [
   ['Explore', [['#story', 'The story'], ['/services', 'Services'], ['/industries', 'Industries'], ['#process', 'Process'], ['#faq', 'FAQ']]],
@@ -58,10 +59,10 @@ export default function Footer() {
         ))}
       </div>
       <div className="mt-[8vh] overflow-hidden text-center select-none" aria-hidden="true">
-        <span className="js-word footer-word inline-block">Weightcraft</span>
+        <span className="js-word footer-word inline-block">{SITE.name}</span>
       </div>
       <div className="mt-6 flex flex-wrap justify-between gap-4 text-mono-xs text-bone-5">
-        <span>© {new Date().getFullYear()} Weightcraft</span>
+        <span>© {new Date().getFullYear()} {SITE.name}</span>
         <span>Often imitated. Never duplicated.</span>
         <a href="#top" className="link">
           Back to top ↑

@@ -1,4 +1,4 @@
-/* Weightcraft design system entry. The rules live in /styles; the spec lives in DESIGN.md. */
+/* Ramanujan design system entry. The rules live in /styles; the spec lives in DESIGN.md. */
 @import 'tailwindcss';
 
 @import '../styles/tokens.css';

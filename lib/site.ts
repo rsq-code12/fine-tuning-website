@@ -3,22 +3,29 @@
  * Every SEO surface (metadata, JSON-LD, sitemap, llms.txt, feeds, emails) reads from here,
  * and all content files write {{brand}} instead of the name, so a rebrand is one edit.
  *
- * NOTE: "Weightcraft", the domain and the email are placeholders until confirmed.
+ * The public name is Ramanujan. The domain is not decided yet — do not invent one.
+ * TODO(brand): replace `email` (and the fallback origin below) when the Ramanujan
+ * domain exists. Until then the previous address stays, and search stays noindex.
  */
 
 const envUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : '');
 
 export const SITE = {
-  name: 'Weightcraft',
-  legalName: 'Weightcraft',
+  name: 'Ramanujan',
+  legalName: 'Ramanujan',
+  /** TODO(brand): previous domain. Do not invent a replacement. Set NEXT_PUBLIC_SITE_URL when the real origin exists. */
   url: (envUrl || 'https://weightcraft.ai').replace(/\/$/, ''),
+  /**
+   * TODO(brand): contact address. Still on the previous domain because the new one is unknown.
+   * This is the only stored copy — pages, schema, llms.txt and lead mail all read SITE.email.
+   */
   email: 'hello@weightcraft.ai',
   tagline: 'The Godfathers of Applied AI',
   /** One-sentence entity definition. Repeated verbatim across pages so search and answer engines learn it. */
   definition:
-    'Weightcraft is an applied AI studio that trains and fine-tunes custom language models, builds niche training datasets, and ships production AI agent systems for businesses.',
+    'Ramanujan is an applied AI studio that trains and fine-tunes custom language models, builds niche training datasets, and ships production AI agent systems for businesses.',
   description:
-    'Weightcraft trains, fine-tunes and unleashes custom AI models and agent systems for companies that refuse to be average. Often imitated. Never duplicated.',
+    'Ramanujan trains, fine-tunes and unleashes custom AI models and agent systems for companies that refuse to be average. Often imitated. Never duplicated.',
   /** Typical commitments already stated on the site. Keep in sync with the home page copy. */
   promises: {
     reply: 'A plan, a price and an honest verdict within 24 hours',

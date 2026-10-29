@@ -21,7 +21,7 @@ Code lives in this repo; switches live in environment variables (see `.env.examp
 
 ## One-time setup (about 20 minutes)
 
-1. **Confirm the brand and domain.** "Weightcraft", the domain and `hello@weightcraft.ai` are placeholders. Change them once in `lib/site.ts`; every page, schema and file follows (content uses a `{{brand}}` token).
+1. **Confirm the domain.** The public name is Ramanujan (`SITE.name` in `lib/site.ts`). The fallback origin and contact email still use the previous domain (`hello@weightcraft.ai`) because the new domain is not decided — do not invent one. Change `SITE.email` and `NEXT_PUBLIC_SITE_URL` when it exists; page copy follows the name through the `{{brand}}` token.
 2. **Deploy to Vercel** and set `NEXT_PUBLIC_SITE_URL` to the real domain. **Search is off by default** (robots.txt blocks all crawlers, every response is `noindex`). Set `SITE_INDEXABLE=1` and redeploy once the real brand is in: nothing in this file works until you do.
 3. **Pick where leads land.** Set `LEAD_WEBHOOK_URL` (Slack, Discord, or a Zapier/Make/n8n hook into your CRM) and/or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL`. Without either, leads only reach the server log.
 4. **Set `CRON_SECRET`** (any long random string). Vercel passes it to the two cron jobs in `vercel.json`.
