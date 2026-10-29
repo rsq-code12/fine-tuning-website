@@ -78,6 +78,15 @@ spacing: { base: 4px, xs: 8px, sm: 12px, md: 16px, lg: 24px, xl: 40px, xxl: 64px
 | Tag | Mono caption in `muted`, no border, separated by ` · `. |
 | Service card | `surface-soft`, hairline border, 0px radius; number in display, title in title, body serif, tools as tags. |
 
+## Logo
+
+The mark is Ramanujan's infinite nested radical drawn as type: three radical signs, each a 0.6× copy of the last, anchored bottom-right, every bar ending flush on one right edge. Strokes thin as they recede (3.8 / 3.0 / 2.4 on a 64 grid), with square caps and mitred points. The series converges on a single ember point, the only colour in the logo.
+
+- Wordmark: RAMANUJAN in Archivo 600 at 88% width, uppercase, tracked 0.3em. Lockup: mark 2.3× the cap height, gap ≈ 1 cap height.
+- Large sizes take the steel gradient on strokes and wordmark and a heated-metal ember bead. Below ~48px use flat white strokes and a flat `#ff4d24` dot.
+- Minimum clear space: one cap height on every side. Never recolour the strokes, rotate the mark or add a second accent.
+- Sources: `components/ui/Logo.tsx` (site), `app/icon.svg` (favicon), `brand/` (SVG masters and PNG exports, including LinkedIn sizes).
+
 ## Implementation map
 
 - Tokens and fonts: `styles/tokens.css`, `app/layout.tsx`
