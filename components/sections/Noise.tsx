@@ -69,17 +69,17 @@ export default function Noise() {
           № 01 · The raw internet
         </Reveal>
         <SplitReveal className="display">
-          Every AI is born from <em>garbage.</em>
+          Every AI is born from <em>noise.</em>
         </SplitReveal>
         <Reveal as="p" className="lead mx-auto" delay={0.1}>
-          Trillions of words. Forum fights, spam, broken code, bad recipes. Most teams shovel this mess into their models and pray. We
-          don&rsquo;t pray. We don&rsquo;t need to.
+          Base models learn from trillions of words of public text: forum threads, spam, broken code, outdated facts. That is why
+          generic AI sounds confident and is often wrong. Better models start with deciding what they should never learn from.
         </Reveal>
         <Reveal className="mt-6 flex flex-col items-center gap-3" delay={0.2}>
           <span className="js-count steel font-display font-semibold text-[clamp(1.5rem,6.2vw,6.4rem)] leading-none tracking-[0.005em] tabular-nums" data-count="15000000000000">
             0
           </span>
-          <span className="text-mono-xs text-bone-4">tokens the internet throws at one model. We decide which ones live.</span>
+          <span className="text-mono-xs text-bone-4">tokens of public text behind a typical base model. We decide which ones matter for yours.</span>
         </Reveal>
       </div>
     </section>

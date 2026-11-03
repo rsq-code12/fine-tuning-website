@@ -8,8 +8,18 @@ import { SITE } from '@/lib/site';
 const COLS: [string, [string, string][]][] = [
   ['Explore', [['#story', 'The story'], ['/services', 'Services'], ['/industries', 'Industries'], ['#process', 'Process'], ['#faq', 'FAQ']]],
   ['Resources', [['/audit', 'Free AI audit'], ['/tools/fine-tuning-cost-calculator', 'Cost calculator'], ['/guides', 'Guides'], ['/glossary', 'AI glossary']]],
-  ['Elsewhere', [['#', 'X / Twitter'], ['#', 'LinkedIn'], ['#', 'GitHub'], ['#', 'Hugging Face']]],
 ];
+
+// Social profiles appear only once they exist (lib/site.ts): dead '#' links cost trust
+const SOCIAL = (
+  [
+    [SITE.social.x, 'X / Twitter'],
+    [SITE.social.linkedin, 'LinkedIn'],
+    [SITE.social.github, 'GitHub'],
+    [SITE.social.huggingface, 'Hugging Face'],
+  ] as [string, string][]
+).filter(([href]) => href);
+if (SOCIAL.length) COLS.push(['Elsewhere', SOCIAL]);
 
 export default function Footer() {
   const root = useRef<HTMLElement>(null);
@@ -39,12 +49,12 @@ export default function Footer() {
 
   return (
     <footer ref={root} data-canvas="1" data-chapter="8" className="relative z-[2] overflow-hidden px-gutter pt-[12vh] pb-8">
-      <div className="mx-auto grid max-w-6xl gap-10 border-t border-bone/12 pt-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div className={`mx-auto grid max-w-6xl gap-10 border-t border-bone/12 pt-10 ${COLS.length > 2 ? 'md:grid-cols-[1.4fr_1fr_1fr_1fr]' : 'md:grid-cols-[1.4fr_1fr_1fr]'}`}>
         <div className="flex flex-col gap-4">
           <p className="eyebrow">Studio</p>
           <p className="max-w-sm text-bone-3">
-            The godfathers of applied AI. Model training, fine-tuning, datasets and agent systems for companies that refuse to be
-            average.
+            The godfathers of applied AI. Model fine-tuning, training datasets, evaluation and agent systems for businesses that want
+            AI they own.
           </p>
         </div>
         {COLS.map(([title, links]) => (
@@ -63,7 +73,7 @@ export default function Footer() {
       </div>
       <div className="mt-6 flex flex-wrap justify-between gap-4 text-mono-xs text-bone-5">
         <span>© {new Date().getFullYear()} {SITE.name}</span>
-        <span>Often imitated. Never duplicated.</span>
+        <span>Your data. Your model. Your advantage.</span>
         <a href="#top" className="link">
           Back to top ↑
         </a>

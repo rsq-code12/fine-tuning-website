@@ -44,8 +44,9 @@ export default function DataChapter() {
           We don&rsquo;t collect data. We <em>interrogate</em> it.
         </SplitReveal>
         <Reveal as="p" className="lead" delay={0.1}>
-          Every example gets cross-examined: filtered, de-duplicated, labelled, balanced. Junk gets whacked. Only data that makes a
-          model smarter walks out alive. That&rsquo;s the difference between an AI demo and an AI that prints money.
+          Every example is filtered, de-duplicated, labelled, balanced and cleared of personal data, then checked against written
+          acceptance criteria. Only examples that measurably improve the model reach training. That is the difference between an AI
+          demo and a system you can run a business on.
         </Reveal>
         <Reveal as="ul" className="tags" delay={0.2}>
           <li>Dataset curation</li>

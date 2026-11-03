@@ -62,8 +62,8 @@ export default function LeadForm({ source, answers, heading, sub, cta = 'Get my 
     return (
       <div className="panel flex flex-col gap-4 p-8" role="status">
         <p className="eyebrow">Received</p>
-        <p className="doc-h2">Consider it handled.</p>
-        <p className="text-bone-3">A plan, a price and an honest verdict land in your inbox within 24 hours. Check spam once, just in case.</p>
+        <p className="doc-h2">Thank you. We have it.</p>
+        <p className="text-bone-3">You will get a plan, a price and an honest verdict within 24 hours. If it does not arrive, check your spam folder.</p>
       </div>
     );
 

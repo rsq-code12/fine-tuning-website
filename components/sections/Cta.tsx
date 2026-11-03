@@ -15,7 +15,7 @@ const TOPICS = [
   ['Fine-tune a model', 'Fine-tune a model'],
   ['Build agents', 'Build AI agents'],
   ['Curate data', 'Curate a dataset'],
-  ['Dominate my market', 'Dominate my market with AI'],
+  ['Find where AI fits', 'Find where AI fits in my business'],
 ];
 
 export default function Cta() {
@@ -34,13 +34,13 @@ export default function Cta() {
           lines={{ max: 176, min: 30 }}
           className="cta-title w-full font-display font-semibold uppercase leading-[0.92] tracking-[0.005em]"
         >
-          Let&rsquo;s make you
+          Let&rsquo;s build an AI
           <br />
-          <em>untouchable.</em>
+          <em>you own.</em>
         </SplitReveal>
         <Reveal as="p" className="lead mx-auto" delay={0.1}>
           Tell us what you want your AI to know. Within 24 hours you get a plan, a price and an honest verdict. If you don&rsquo;t need
-          us, we&rsquo;ll say so. (You need us.)
+          us, we&rsquo;ll say so.
         </Reveal>
 
         <Reveal delay={0.15} className="flex flex-wrap items-center justify-center gap-2" role="group" aria-label="What do you want to build?">
@@ -62,12 +62,15 @@ export default function Cta() {
 
         <Reveal delay={0.2} className="mt-2 flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
           <Magnetic href={`mailto:${CONTACT_EMAIL}?subject=${subject}`} className="btn btn--lg">
-            <span>Request a sit-down</span>
+            <span>Talk to our team</span>
             <Arrow />
           </Magnetic>
           <a href={`mailto:${CONTACT_EMAIL}`} className="link text-mono-xs text-bone-3">
             {CONTACT_EMAIL}
           </a>
+        </Reveal>
+        <Reveal as="p" delay={0.22} className="text-mono-xs text-bone-4">
+          Reply within 24 hours · Scoping call · Written proposal
         </Reveal>
         <Reveal as="p" delay={0.25} className="text-mono-xs text-bone-4">
           Not sure what you need?{' '}

@@ -43,8 +43,8 @@ export default function Nav() {
       </a>
       <div className="col-start-3 justify-self-end">
         <Magnetic href="#contact" className="btn btn--sm">
-          <span className="hidden sm:inline">Request a sit-down</span>
-          <span className="sm:hidden">Sit-down</span>
+          <span className="hidden sm:inline">Talk to our team</span>
+          <span className="sm:hidden">Contact</span>
         </Magnetic>
       </div>
     </header>

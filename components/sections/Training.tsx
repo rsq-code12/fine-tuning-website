@@ -45,7 +45,7 @@ const PHASES = [
   { at: 0, word: 'Reading', line: 'It reads millions of your real examples.' },
   { at: 0.28, word: 'Guessing', line: 'It predicts the next word. Mostly wrong, at first.' },
   { at: 0.55, word: 'Correcting', line: 'Every mistake nudges billions of tiny weights.' },
-  { at: 0.84, word: 'Learned', line: 'Now it answers like your best people.' },
+  { at: 0.84, word: 'Learned', line: 'Now it answers in your formats, with your judgment.' },
 ];
 
 const escape = (c: string) => (c === '<' ? '&lt;' : c === '>' ? '&gt;' : c === '&' ? '&amp;' : c);
@@ -152,7 +152,7 @@ export default function Training() {
         <div className="absolute top-24 left-[clamp(20px,3.2vw,44px)] z-10 flex max-w-xl flex-col gap-3">
           <p className="eyebrow">№ 03 · Training</p>
           <SplitReveal className="display text-[clamp(1.8rem,3vw,3.1rem)]" start="top 70%">
-            Billions of reps. <em>No days off.</em>
+            It learns by correction. <em>We measure every step.</em>
           </SplitReveal>
         </div>
 

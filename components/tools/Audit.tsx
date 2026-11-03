@@ -85,7 +85,7 @@ export default function Audit() {
                   <div className="meter" aria-hidden="true">
                     <span style={{ width: `${score}%` }} />
                   </div>
-                  <p className="text-[0.98rem] text-bone-3">{score >= 70 ? 'Ready to build. Waiting costs you.' : score >= 45 ? 'Close. One or two gaps to close first.' : 'Foundations first. Still a fast win.'}</p>
+                  <p className="text-[0.98rem] text-bone-3">{score >= 70 ? 'Ready to build now.' : score >= 45 ? 'Close. One or two gaps to close first.' : 'Foundations first. Still a fast win.'}</p>
                 </div>
               </section>
 

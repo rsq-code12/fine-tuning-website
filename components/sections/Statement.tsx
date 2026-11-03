@@ -28,8 +28,8 @@ export default function Statement() {
   return (
     <section ref={root} data-chapter="5" data-canvas="0.28" className="relative px-gutter py-[22vh]">
       <p className="js-statement statement-text mx-auto max-w-6xl">
-        Most companies rent the same AI as everyone else, then wonder why they all sound the same. <em>Our clients own theirs.</em>{' '}
-        Trained on their data. Fluent in their voice. Loyal to nobody else.
+        Most companies rent the same AI as everyone else, then wonder why they all sound the same. <em>With us, you own yours.</em>{' '}
+        Trained on your data. Fluent in your voice. Deployed on infrastructure you control.
       </p>
     </section>
   );

@@ -17,7 +17,7 @@ export default function Page() {
     <HubPage
       path="/guides"
       eyebrow="Guides"
-      title="The answers vendors dance around"
+      title="Straight answers to the questions buyers ask"
       intro={intro}
       items={guides.map((d) => ({ href: `/guides/${d.slug}`, title: d.seoTitle, blurb: d.answer, tag: d.eyebrow.replace(/^Guide · /, '') }))}
     />

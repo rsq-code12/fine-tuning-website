@@ -15,7 +15,7 @@ export default function Page() {
     <HubPage
       path="/glossary"
       eyebrow="Glossary"
-      title="AI terms, minus the smoke"
+      title="AI terms, defined plainly"
       intro="Every word vendors use to sound expensive, defined in one or two sentences you can repeat in a board meeting."
       items={terms.map((t) => ({ href: `/glossary/${t.slug}`, title: t.term, blurb: t.short, tag: t.aka }))}
       dense

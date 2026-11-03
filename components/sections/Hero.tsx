@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { gsap, useGSAP } from '@/lib/gsap';
 import { experience } from '@/lib/experience';
 import Magnetic from '@/components/ui/Magnetic';
+import { SITE } from '@/lib/site';
 import { Arrow } from '@/components/ui/Logo';
 
 // White uppercase headline; GODFATHER. carries the ember accent
@@ -53,7 +54,7 @@ export default function Hero() {
       <div className="js-fade js-meta flex justify-between text-mono-xs text-bone-4">
         <span>№ 00 · The godfathers of applied AI</span>
         <span className="hidden items-center gap-2.5 lg:flex">
-          <i className="pulse-dot" /> Taking a handful of clients. Not everyone.
+          <i className="pulse-dot" /> Now accepting pilot projects
         </span>
       </div>
 
@@ -71,16 +72,16 @@ export default function Hero() {
       <div className="js-bottom grid items-end gap-8 md:grid-cols-[minmax(0,34rem)_1fr]">
         <div className="space-y-7">
           <p className="js-fade lead">
-            Everyone else is playing with AI. We bend it to our will. Custom-trained models, agent armies that never sleep, and
-            results that make your competitors nervous. There&rsquo;s us. Then there&rsquo;s everybody else.
+            {SITE.name} is an applied AI studio. We fine-tune language models on your data, build the datasets behind them, and
+            deploy AI agents that are evaluated before they ship. You own the model. We prove it works.
           </p>
           <div className="js-fade flex flex-wrap items-center gap-6">
             <Magnetic href="#contact" className="btn">
-              <span>Request a sit-down</span>
+              <span>Talk to our team</span>
               <Arrow />
             </Magnetic>
             <a href="#story" className="link text-sm text-bone-2">
-              Watch us raise a model ↓
+              See how we train a model ↓
             </a>
           </div>
         </div>

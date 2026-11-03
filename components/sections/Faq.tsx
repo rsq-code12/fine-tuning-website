@@ -15,10 +15,10 @@ export default function Faq() {
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="flex flex-col gap-6 lg:sticky lg:top-32 lg:self-start">
           <Reveal as="p" className="eyebrow">
-            Questions, answered
+            FAQ
           </Reveal>
           <SplitReveal className="display display--md">
-            Ask anything. <em>We&rsquo;ve heard it all.</em>
+            Straight questions. <em>Straight answers.</em>
           </SplitReveal>
         </div>
         <div>

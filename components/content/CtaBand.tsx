@@ -3,7 +3,7 @@ import { Arrow } from '@/components/ui/Logo';
 import { SITE } from '@/lib/site';
 
 /** The closer on every content page: two doors in, both ending in a qualified lead. */
-export default function CtaBand({ heading = 'Stop reading. Start winning.' }: { heading?: string }) {
+export default function CtaBand({ heading = 'Ready when you are.' }: { heading?: string }) {
   return (
     <section className="panel mt-24 flex flex-col items-start gap-8 p-6 md:p-14">
       <p className="eyebrow">Your move</p>
@@ -18,7 +18,7 @@ export default function CtaBand({ heading = 'Stop reading. Start winning.' }: { 
           <Arrow />
         </Link>
         <Link href="/#contact" className="link text-mono-xs text-bone-3">
-          Or request a sit-down
+          Or talk to our team
         </Link>
       </div>
     </section>

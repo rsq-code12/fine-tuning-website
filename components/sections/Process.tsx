@@ -135,7 +135,7 @@ export default function Process() {
           The method
         </Reveal>
         <SplitReveal className="display max-w-5xl">
-          Others need quarters. We need <em>weeks.</em>
+          From first call to a measured pilot in <em>weeks.</em>
         </SplitReveal>
       </header>
 

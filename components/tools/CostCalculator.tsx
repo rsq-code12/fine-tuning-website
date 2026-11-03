@@ -116,7 +116,7 @@ export default function CostCalculator() {
           </dl>
           <p className="mt-6 text-[0.98rem] leading-relaxed text-bone-3">
             {r.costTotal < 500
-              ? 'Compute is the cheap part. The money is in the data, the evaluation and the engineering around it. That is where projects win or die.'
+              ? 'Compute is the cheap part. The money is in the data, the evaluation and the engineering around it. That is where projects succeed or stall.'
               : 'At this scale compute is real money, and every wasted run hurts. Get the data and evals right before you light up the cluster.'}
           </p>
         </div>

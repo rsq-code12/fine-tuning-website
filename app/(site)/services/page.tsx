@@ -17,7 +17,7 @@ export default function Page() {
     <HubPage
       path="/services"
       eyebrow="Services"
-      title="Ten ways we make AI pay up"
+      title="Ten ways we put AI to work"
       intro={intro}
       items={serviceDocs.map((d, i) => ({ href: `/services/${d.slug}`, title: d.seoTitle, blurb: d.answer, tag: String(i + 1).padStart(2, '0') }))}
     />

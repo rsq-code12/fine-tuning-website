@@ -14,7 +14,7 @@ export default function SiteFooter() {
         ...TOOLS.map((t) => [t.path, t.title] as [string, string]),
         ['/glossary', 'AI glossary'],
         ['/', 'The story'],
-        ['/#contact', 'Request a sit-down'],
+        ['/#contact', 'Talk to our team'],
       ],
     ],
   ];

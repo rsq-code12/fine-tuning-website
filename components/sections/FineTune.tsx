@@ -107,7 +107,7 @@ function Demo() {
                   transition={{ type: 'spring', stiffness: 420, damping: 34 }}
                 />
               )}
-              {m === 'base' ? 'Their AI' : 'Our AI'}
+              {m === 'base' ? 'Generic model' : 'Fine-tuned'}
             </button>
           ))}
         </div>
@@ -145,14 +145,16 @@ export default function FineTune() {
           № 04 · Fine-tuning
         </Reveal>
         <SplitReveal className="display display--md">
-          Generic AI knows a little about everything. <em>Ours</em> knows your business cold.
+          A general model knows a little about everything. <em>Yours</em> will know your business.
         </SplitReveal>
         <Reveal as="p" className="lead" delay={0.1}>
-          We take the most powerful models on the planet and drill them on your documents, calls and decisions until they answer like
-          your best employee on their best day. Every day. No sick days.
+          We start from a proven open or commercial model and fine-tune it on your documents, conversations and decisions, using
+          supervised fine-tuning and preference training. It answers in your formats and voice, consistently, and is tested on your
+          real cases before it ships.
         </Reveal>
         <Reveal delay={0.15}>
           <Demo />
+          <p className="mt-3 text-mono-xs text-bone-4">Illustrative example · fictional businesses</p>
         </Reveal>
         <Reveal as="ul" className="tags" delay={0.2}>
           <li>LoRA / QLoRA</li>

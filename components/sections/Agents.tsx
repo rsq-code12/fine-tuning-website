@@ -12,7 +12,7 @@ function Feed() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { margin: '0px 0px -10% 0px' });
   const [items, setItems] = useState<Item[]>([]);
-  const [count, setCount] = useState(1284);
+  const [count, setCount] = useState(3);
   const [now, setNow] = useState(0);
   const cursor = useRef(0);
 
@@ -48,10 +48,10 @@ function Feed() {
     <div ref={ref} className="panel overflow-hidden">
       <div className="flex items-center justify-between border-b border-bone/10 px-4 py-3 text-mono-xs text-bone-4">
         <span className="flex items-center gap-2.5">
-          <i className="pulse-dot" /> live activity
+          <i className="pulse-dot" /> Example agent run
         </span>
         <span>
-          <b className="font-normal text-bone tabular-nums">{count.toLocaleString('en-US')}</b> tasks today
+          <b className="font-normal text-bone tabular-nums">{count.toLocaleString('en-US')}</b> tasks in this demo
         </span>
       </div>
       <ul className="relative h-[15.5rem] overflow-hidden">
@@ -90,8 +90,9 @@ export default function Agents() {
           Then we give it <em>hands.</em>
         </SplitReveal>
         <Reveal as="p" className="lead" delay={0.1}>
-          A trained model is a genius in a jar. We let it out. Agents plug into your inbox, CRM, browser and spreadsheets, then hunt
-          leads, write, close and support. A crew that never sleeps, never quits and never asks for a raise.
+          Agents connect a trained model to the tools your team already uses: inbox, CRM, browser, spreadsheets. They research,
+          draft, update records and resolve routine requests around the clock, logging every step and asking for human approval
+          where the stakes are high.
         </Reveal>
         <Reveal delay={0.15}>
           <Feed />

@@ -902,7 +902,7 @@ export const industryDocs: IndustryDoc[] = [
       { type: 'h2', text: 'Where does AI actually pay off in real estate?' },
       {
         type: 'p',
-        text: 'Real estate is a speed and follow-up business. Leads arrive at all hours, most go cold, and the agent who answers first often gets the conversation. AI agents never sleep and never forget a follow-up. That is the payoff.',
+        text: 'Real estate is a speed and follow-up business. Leads arrive at all hours, most go cold, and the agent who answers first often gets the conversation. AI agents work around the clock and never forget a follow-up. That is the payoff.',
       },
       {
         type: 'p',

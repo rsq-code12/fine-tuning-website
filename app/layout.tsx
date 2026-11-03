@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/', types: { 'text/plain': '/llms.txt', 'application/rss+xml': '/feed.xml' } },
   openGraph: {
     title: `${SITE.name} · AI has a godfather.`,
-    description: 'Custom model training, fine-tuning, datasets and AI agents. There’s us. Then there’s everybody else.',
+    description: 'Fine-tuned models, training data and AI agents you own. The godfathers of applied AI.',
     type: 'website',
     url: '/',
     siteName: SITE.name,

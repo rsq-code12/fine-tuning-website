@@ -54,10 +54,10 @@ export default function Home() {
         <Hero />
         <Noise />
         <DataChapter />
-        <WordWarp id="learn" word="Learn" variant="scatter" chapter={3} morph caption={['№ 03 · Training', 'Billions of corrections. Zero mercy.']} />
+        <WordWarp id="learn" word="Learn" variant="scatter" chapter={3} morph caption={['№ 03 · Training', 'Billions of corrections. Every one measured.']} />
         <Training />
         <FineTune />
-        <WordWarp id="act" word="Act." variant="split" chapter={5} morph caption={['№ 05 · Agents', 'Brains are nice. Hands are better.']} />
+        <WordWarp id="act" word="Act." variant="split" chapter={5} morph caption={['№ 05 · Agents', 'A model that acts, not just answers.']} />
         <Agents />
         <Statement />
         <Versus />

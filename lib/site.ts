@@ -25,7 +25,7 @@ export const SITE = {
   definition:
     'Ramanujan is an applied AI studio that trains and fine-tunes custom language models, builds niche training datasets, and ships production AI agent systems for businesses.',
   description:
-    'Ramanujan trains, fine-tunes and unleashes custom AI models and agent systems for companies that refuse to be average. Often imitated. Never duplicated.',
+    'The godfathers of applied AI. Ramanujan fine-tunes language models on your data, builds training datasets and deploys evaluated AI agents for businesses.',
   /** Typical commitments already stated on the site. Keep in sync with the home page copy. */
   promises: {
     reply: 'A plan, a price and an honest verdict within 24 hours',

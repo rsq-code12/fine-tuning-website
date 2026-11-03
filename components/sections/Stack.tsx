@@ -35,7 +35,7 @@ export default function Stack() {
 
   return (
     <section ref={root} data-chapter="7" data-canvas="0" className="relative py-[12vh]" aria-label="Tools and models we work with">
-      <p className="eyebrow mb-8 px-gutter">We speak every dialect of AI</p>
+      <p className="eyebrow mb-8 px-gutter">Model-agnostic by design</p>
       {ROWS.map((row, r) => (
         <div key={r} className="marquee">
           <div className="js-track flex" aria-hidden={r > 0 ? true : undefined}>

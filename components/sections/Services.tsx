@@ -134,11 +134,11 @@ export default function Services() {
           className="flex flex-col gap-6 px-gutter min-[900px]:mt-12 min-[900px]:w-max min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-7 min-[900px]:pr-[12vw]"
         >
           <div className="flex flex-none flex-col justify-center gap-6 pb-6 min-[900px]:w-[min(44vw,620px)] min-[900px]:pr-10 min-[900px]:pb-0">
-            <p className="eyebrow">The family business</p>
+            <p className="eyebrow">Services</p>
             <h2 className="services-title text-[clamp(2.3rem,6vw,6.6rem)] leading-[0.92]">
-              Ten ways we make AI <em>pay up.</em>
+              Ten ways we put AI <em>to work.</em>
             </h2>
-            <p className="js-intro-sub max-w-sm text-xl text-bone-3">Pick one. Or let the family run the whole operation.</p>
+            <p className="js-intro-sub max-w-sm text-xl text-bone-3">Start with one, or combine them into one program.</p>
             <p className="hidden items-center gap-3 text-mono-xs text-bone-4 min-[900px]:flex">
               Keep scrolling <span className="inline-block animate-[nudge_1.6s_ease-in-out_infinite]">→</span>
             </p>

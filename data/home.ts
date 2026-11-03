@@ -3,7 +3,7 @@
 export const FAQ: [string, string][] = [
   [
     'What does “fine-tuning” actually mean?',
-    'We take a powerful general AI and train it further on your own examples until it knows your business, your formats and your voice. Think: a genius graduate who gets ten years of experience in one afternoon.',
+    'We take a powerful general AI and train it further on your own examples until it knows your business, your formats and your voice. It is the difference between a capable generalist and a specialist trained on your work.',
   ],
   [
     'Do I need a lot of data?',
@@ -15,42 +15,50 @@ export const FAQ: [string, string][] = [
   ],
   [
     'Why not just use ChatGPT with a good prompt?',
-    'Sometimes that’s enough, and we’ll tell you to your face. When you need consistency, deep domain accuracy, low cost at volume or private deployment, prompts tap out. We don’t.',
+    'Sometimes that is enough, and we will tell you so. When you need consistency, deep domain accuracy, low cost at volume or private deployment, prompting reaches its limit and training is the better tool.',
+  ],
+  [
+    'Who owns the model and the data?',
+    'You do. The fine-tuned weights, the training dataset and the evaluation suite are yours, and we can work entirely inside your own cloud.',
+  ],
+  [
+    'Do you work with teams training their own models?',
+    'Yes. We build supervised and preference datasets, scoring rubrics and evaluation suites for teams doing their own post-training.',
   ],
   [
     'How fast can you move?',
-    'A focused pilot usually ships in two to six weeks. Bigger agent systems roll out in phases, so you’re winning long before we’re finished.',
+    'A focused pilot usually ships in two to six weeks. Bigger agent systems roll out in phases, so you see value long before the full rollout is complete.',
   ],
 ];
 
 export const STEPS = [
   {
     title: 'Diagnose',
-    body: 'We find where AI makes you money, fast. One sit-down, a ranked hit list of opportunities, and a straight answer: worth it or not.',
+    body: 'We map where AI will pay back and where it won’t: one working session, a ranked list of opportunities and a straight answer on whether to proceed.',
     when: 'Week 1',
-    gets: ['Workflow audit', 'ROI hit list', 'Straight verdict'],
+    gets: ['Workflow audit', 'Ranked opportunities', 'Go / no-go verdict'],
   },
   {
     title: 'Collect & curate',
-    body: 'We round up your docs, tickets, transcripts and data, then clean, label and shape them into a training set built to win.',
+    body: 'We gather your documents, tickets, transcripts and data, then clean, label and structure them into a versioned training set with personal data removed.',
     when: 'Weeks 1–2',
     gets: ['Versioned dataset', 'PII scrubbed', 'Synthetic top-up'],
   },
   {
     title: 'Train & tune',
-    body: 'We pick the right base model for your budget and fine-tune it hard: LoRA, DPO or full fine-tune. Every run tracked, every metric earned.',
+    body: 'We choose the base model that fits your quality bar and budget, then fine-tune it with LoRA, preference training or, where it pays, reinforcement learning. Every run is tracked and reproducible.',
     when: 'Weeks 2–4',
     gets: ['Model weights you own', 'Training reports', 'Cost per query'],
   },
   {
     title: 'Evaluate',
-    body: 'Custom evals put it through hell on your real cases: accuracy, tone, safety, cost. Nothing ships until it’s undeniable.',
+    body: 'Custom evaluations test it on held-out real cases for accuracy, tone, safety and cost. Nothing ships until it clears the release gates we agree with you.',
     when: 'Continuous',
     gets: ['Eval suite', 'Red-team pass', 'Release gates'],
   },
   {
     title: 'Deploy & evolve',
-    body: 'We ship it straight into your stack and keep it learning from live feedback. It gets sharper every month. Your competitors don’t.',
+    body: 'We deploy into your stack, monitor it in production and retrain on reviewed feedback, so performance improves month over month.',
     when: 'Week 4+',
     gets: ['Production API', 'Monitoring', 'Monthly retrains'],
   },
@@ -58,16 +66,16 @@ export const STEPS = [
 
 export const RENT = [
   'Knows the internet. Not your business.',
-  'Your data walks out the door',
-  'Pay per token. Forever.',
+  'Your data leaves your environment',
+  'Usage fees that grow with every query',
   'Same answers your competitors get',
-  'Prompt tricks and prayers',
+  'Quality held together by prompts',
 ];
 
 export const OWN = [
-  'Trained on your docs, deals & tone',
-  'Lives in your cloud. Answers to you.',
-  'Pennies per query at scale',
-  'A moat nobody can cross',
-  'Battle-tested with evals, every release',
+  'Trained on your documents, decisions and tone',
+  'Runs in your cloud, under your controls',
+  'Lower cost per query at scale',
+  'An advantage competitors cannot rent',
+  'Evaluated on your cases before every release',
 ];

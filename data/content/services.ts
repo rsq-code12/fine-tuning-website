@@ -196,7 +196,7 @@ export const serviceDocs: ServiceDoc[] = [
       },
       {
         type: 'p',
-        text: 'Think of it as a small operations team that never sleeps. A researcher agent finds and qualifies leads. A writer agent drafts outreach. A triage agent sorts support tickets and drafts replies. A supervisor agent checks the work and routes exceptions to a human.',
+        text: 'Think of it as a small operations team that works around the clock. A researcher agent finds and qualifies leads. A writer agent drafts outreach. A triage agent sorts support tickets and drafts replies. A supervisor agent checks the work and routes exceptions to a human.',
       },
       { type: 'h2', text: 'What business problems do agent swarms solve?' },
       {
@@ -593,7 +593,7 @@ export const serviceDocs: ServiceDoc[] = [
       { type: 'h2', text: 'Ready to find where AI saves your team the most time?' },
       {
         type: 'p',
-        text: 'Take the 2-minute [AI audit](/audit). {{brand}} returns a plan, a price and an honest verdict within 24 hours. If you do not need us, we will say so. From copy-paste chaos to a business on autopilot starts with one honest look.',
+        text: 'Take the 2-minute [AI audit](/audit). {{brand}} returns a plan, a price and an honest verdict within 24 hours. If you do not need us, we will say so. It starts with one honest look at how the work gets done today.',
       },
     ],
     faqs: [
@@ -753,10 +753,10 @@ export const serviceDocs: ServiceDoc[] = [
         type: 'p',
         text: 'If your clients pay for bespoke, high-touch judgment and you have more time than work, a stack will not fix your pipeline. Sales will. And if you only need help with one tool, a good tutorial is cheaper than us, and we will say so.',
       },
-      { type: 'h2', text: 'Ready for an unfair advantage?' },
+      { type: 'h2', text: 'Ready to see what a small team can do?' },
       {
         type: 'p',
-        text: 'Take the 2-minute [AI audit](/audit) or [get in touch](/#contact). {{brand}} returns a plan, a price and an honest verdict within 24 hours. Small team. Unfair advantage. Same headcount, far more output.',
+        text: 'Take the 2-minute [AI audit](/audit) or [get in touch](/#contact). {{brand}} returns a plan, a price and an honest verdict within 24 hours. Same headcount, far more output.',
       },
     ],
     faqs: [
@@ -1072,7 +1072,7 @@ export const serviceDocs: ServiceDoc[] = [
         type: 'p',
         text: 'Skip it for a single model call inside an existing app, where standard application logging is enough. And if your team already runs mature LLM tracing and evals, you may only need a review, not a build.',
       },
-      { type: 'h2', text: 'Want agents that never go rogue?' },
+      { type: 'h2', text: 'Want agents you can trust in production?' },
       {
         type: 'p',
         text: 'Take the 2-minute [AI audit](/audit) or [book a technical call](/#contact). {{brand}} returns a plan, a price and an honest verdict within 24 hours.',
@@ -1392,7 +1392,7 @@ export const serviceDocs: ServiceDoc[] = [
         type: 'p',
         text: 'Do not build one without the data rights you need, because many market data and news licenses restrict storage, redistribution or automated use. And if your firm is regulated, check how AI-assisted research fits your compliance obligations before outputs reach clients. This is general information, not legal or investment advice.',
       },
-      { type: 'h2', text: 'Want a research desk that never blinks?' },
+      { type: 'h2', text: 'Want always-on research you can audit?' },
       {
         type: 'p',
         text: 'Take the 2-minute [AI audit](/audit) or [talk to us directly](/#contact). {{brand}} returns a plan, a price and an honest verdict within 24 hours.',
@@ -1556,10 +1556,10 @@ export const serviceDocs: ServiceDoc[] = [
         type: 'p',
         text: "Skip it if your brand depends on one person's live personality and that person will not stay in the loop. And skip it if the plan is to flood platforms with low-effort posts. Search engines and platforms actively demote that, and it burns audience trust.",
       },
-      { type: 'h2', text: 'Ready to build the audience, then cash in?' },
+      { type: 'h2', text: 'Ready to build a content engine?' },
       {
         type: 'p',
-        text: 'Take the 2-minute [AI audit](/audit) or [pitch us your niche](/#contact). {{brand}} returns a plan, a price and an honest verdict within 24 hours. On brand. On schedule. On fire.',
+        text: 'Take the 2-minute [AI audit](/audit) or [pitch us your niche](/#contact). {{brand}} returns a plan, a price and an honest verdict within 24 hours. On brand, on schedule and reviewed before it ships.',
       },
     ],
     faqs: [
