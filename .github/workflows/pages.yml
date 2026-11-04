@@ -1,0 +1,54 @@
+# Static mirror of the site on GitHub Pages: https://rsq-code12.github.io/fine-tuning-website/
+# Vercel stays the primary deployment and the backend: lead API, crons, Markdown twins and OG images run there.
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # Pages serves files only, so the server routes are left out of this build (they live on Vercel)
+      - run: rm -rf app/api app/md app/og
+      # output: export only writes file routes that are marked static (they are static on Vercel already)
+      - run: |
+          for f in app/robots.ts app/sitemap.ts app/manifest.ts app/*/route.ts; do
+            grep -q "export const dynamic" "$f" || printf "\nexport const dynamic = 'force-static';\n" >> "$f"
+          done
+      - run: npm run build
+        env:
+          STATIC_EXPORT: '1'
+          NEXT_PUBLIC_BASE_PATH: /fine-tuning-website
+          NEXT_PUBLIC_SITE_URL: https://fine-tuning-website.vercel.app
+          NEXT_PUBLIC_API_ORIGIN: https://fine-tuning-website.vercel.app
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -6,7 +6,7 @@ import SplitReveal from '@/components/ui/SplitReveal';
 import Reveal from '@/components/ui/Reveal';
 import Magnetic from '@/components/ui/Magnetic';
 import { Arrow } from '@/components/ui/Logo';
-import { SITE } from '@/lib/site';
+import { SITE, withBase } from '@/lib/site';
 
 /** Alias of SITE.email. The address itself lives only in lib/site.ts. */
 export const CONTACT_EMAIL = SITE.email;
@@ -74,7 +74,7 @@ export default function Cta() {
         </Reveal>
         <Reveal as="p" delay={0.25} className="text-mono-xs text-bone-4">
           Not sure what you need?{' '}
-          <a href="/audit" className="link text-bone-2">
+          <a href={withBase('/audit')} className="link text-bone-2">
             Take the 2-minute AI audit →
           </a>
         </Reveal>

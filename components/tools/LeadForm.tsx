@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { Arrow } from '@/components/ui/Logo';
+import { API_ORIGIN } from '@/lib/site';
 
 type Props = {
   source: 'audit' | 'calculator' | 'contact' | 'guide';
@@ -33,7 +34,7 @@ export default function LeadForm({ source, answers, heading, sub, cta = 'Get my 
     const f = new FormData(e.currentTarget);
     setState('sending');
     try {
-      const res = await fetch('/api/lead', {
+      const res = await fetch(`${API_ORIGIN}/api/lead`, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({

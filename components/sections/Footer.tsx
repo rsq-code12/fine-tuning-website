@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { gsap, ScrollTrigger, SplitText, useGSAP } from '@/lib/gsap';
 import { fitText } from '@/lib/fitText';
-import { SITE } from '@/lib/site';
+import { SITE, withBase } from '@/lib/site';
 
 const COLS: [string, [string, string][]][] = [
   ['Explore', [['#story', 'The story'], ['/services', 'Services'], ['/industries', 'Industries'], ['#process', 'Process'], ['#faq', 'FAQ']]],
@@ -61,7 +61,7 @@ export default function Footer() {
           <div key={title} className="flex flex-col items-start gap-2.5">
             <p className="eyebrow mb-2">{title}</p>
             {links.map(([href, label]) => (
-              <a key={label} href={href} className="link text-bone-2">
+              <a key={label} href={withBase(href)} className="link text-bone-2">
                 {label}
               </a>
             ))}

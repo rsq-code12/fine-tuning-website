@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { gsap, ScrollTrigger, useGSAP } from '@/lib/gsap';
 import { services } from '@/data/services';
 import { SERVICE_SLUGS } from '@/data/content/types';
-import { SITE } from '@/lib/site';
+import { SITE, withBase } from '@/lib/site';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -156,7 +156,7 @@ export default function Services() {
               <div className="svc-num">{pad(i + 1)}</div>
               <h3 className="svc-title">
                 {/* stretched link: the whole card opens the full service page */}
-                <a href={`/services/${SERVICE_SLUGS[i]}`} className="svc-link">
+                <a href={withBase(`/services/${SERVICE_SLUGS[i]}`)} className="svc-link">
                   {s.title}
                 </a>
               </h3>

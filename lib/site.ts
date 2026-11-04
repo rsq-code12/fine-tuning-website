@@ -50,6 +50,14 @@ export const SITE = {
  */
 export const INDEXABLE = process.env.SITE_INDEXABLE === '1';
 
+/**
+ * The GitHub Pages mirror is a static export served under /<repo>. Plain <a> hrefs need the prefix
+ * (next/link adds it itself), and server work (lead API, OG images) stays on the Vercel origin.
+ */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+export const API_ORIGIN = process.env.NEXT_PUBLIC_API_ORIGIN ?? '';
+export const withBase = (href: string) => (href.startsWith('/') ? `${BASE_PATH}${href}` : href);
+
 export const absoluteUrl = (path = '/') => `${SITE.url}${path.startsWith('/') ? path : `/${path}`}`;
 
 /** Replace {{brand}} / {{email}} tokens in content strings. */

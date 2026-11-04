@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { serviceDocs, industryDocs, guides, TOOLS } from '@/data/content';
-import { SITE, brand } from '@/lib/site';
+import { SITE, brand, withBase } from '@/lib/site';
 
 /** Dense, crawlable footer: every hub links to every page, so no page is ever more than two clicks from any other. */
 export default function SiteFooter() {
@@ -40,7 +40,7 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} {SITE.name}
           </span>
           <span>Often imitated. Never duplicated.</span>
-          <a href="/llms.txt" className="link">
+          <a href={withBase('/llms.txt')} className="link">
             llms.txt
           </a>
         </div>
